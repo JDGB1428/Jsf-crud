@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+            <h:outputText value="Nombre: "></h:outputText>
+            <h:inputText value="#{empleadoController.empleado.nombre}"></h:inputText>
+            <h:outputText value="Apellido: "></h:outputText>
+            <h:inputText value="#{empleadoController.empleado.apellido}"></h:inputText>
+            <h:outputText value="Salario: "></h:outputText>
+            <h:inputText value="#{empleadoController.empleado.salario}"></h:inputText>
+            <h:outputText value="FechaNacimiento: "></h:outputText>
+            <p:calendar value="#{empleadoController.empleado.fechaNacimiento}"></p:calendar>
+            <h:outputText value="FechaContratacion: "></h:outputText>
+            <p:calendar value="#{empleadoController.empleado.fechaContratacion}"></p:calendar>
+            <h:outputText value="Genero: "></h:outputText>
+            <h:inputText value="#{empleadoController.empleado.genero}"></h:inputText>
+            <h:outputText value="Identificacion: "></h:outputText>
+            <h:inputText value="#{empleadoController.empleado.identificacion}"></h:inputText>
+            
+        </h:panelGrid>
+        
+        <h:commandButton value="Registar" action="#{empleadoController.registrar()}"></h:commandButton>
+        <p:growl></p:growl>
+        
+        <p:dataTable var="emp" value="#{empleadoController.empleados}">
+            <p:column headerText="Nombre">
+                <h:outputText value="#{emp.nombre}" />
+            </p:column>
+
+            <p:column headerText="Apellido">
+                <h:outputText value="#{emp.apellido}" />
+            </p:column>
+
+            <p:column headerText="Salario">
+                    <h:outputText value="#{emp.salario}" />
+            </p:column>
+
+            <p:column headerText="Fecha de nacimiento">
+                <h:outputText value="#{emp.fechaNacimiento}" />
+            </p:column>
+            
+            <p:column headerText="Fecha de contratacion">
+                <h:outputText value="#{emp.fechaContratacion}" />
+            </p:column>
+            
+            <p:column headerText="Genero">
+                <h:outputText value="#{emp.genero}" />
+            </p:column>
+            
+            <p:column headerText="Identificacion">
+                <h:outputText value="#{emp.identificacion}" />
+            </p:column>
+            
+        </p:dataTable>
+        
+        </h:form>
+        
+    </h:body>
+</html>
+
